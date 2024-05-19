@@ -13,7 +13,7 @@ public class FelineTest {
         Feline feline = new Feline();
         List<String> eatMeat = feline.eatMeat();
         List<String> foodList = List.of("Животные", "Птицы", "Рыба");
-        String textError = "Feline питается " + foodList.toString();
+        String textError = "Feline питается " + foodList;
         Assert.assertEquals(textError, foodList, eatMeat);
     }
 
