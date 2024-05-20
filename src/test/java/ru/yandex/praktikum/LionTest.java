@@ -16,12 +16,12 @@ import static org.mockito.Mockito.when;
 public class LionTest {
     String sex;
 
+    @Mock
+    Feline feline;
+
     public LionTest() {
         this.sex = "Самец";
     }
-
-    @Mock
-    Feline feline;
 
     @Test
     public void getKittens() throws Exception {
