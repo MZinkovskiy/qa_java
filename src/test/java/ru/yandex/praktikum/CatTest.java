@@ -5,16 +5,21 @@ import com.example.Feline;
 import com.example.Predator;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.sql.SQLOutput;
 import java.util.List;
 
+import static org.mockito.Mockito.when;
+
+@RunWith(MockitoJUnitRunner.class)
 public class CatTest {
 
     @Mock
-    private Feline feline;
+    Feline feline;
 
     @Test
     public void getSound() {
@@ -24,10 +29,11 @@ public class CatTest {
 
     @Test
     public void getFood() throws Exception {
-        Cat cat = new Cat(new Feline());
-        List<String> eatList = cat.getFood();
+        Cat cat = new Cat(feline);
         List<String> foodList = List.of("Животные", "Птицы", "Рыба");
         String textError = "Feline питается " + foodList.toString();
+        when(cat.getFood()).thenReturn(foodList);
+        List<String> eatList = cat.getFood();
         Assert.assertEquals(textError, foodList, eatList);
     }
 }

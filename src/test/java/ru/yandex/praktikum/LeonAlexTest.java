@@ -15,20 +15,20 @@ public class LeonAlexTest {
     Feline feline;
 
     @Test
-    public void getFriends() {
+    public void getFriends() throws Exception {
         List<String> listFriends = List.of("Марти", "Глория", "Мелман");
         LeonAlex leonAlex = new LeonAlex(feline);
         assertEquals(listFriends, leonAlex.getFriends());
     }
 
     @Test
-    public void getPlaceOfLiving() {
+    public void getPlaceOfLiving() throws Exception {
         LeonAlex leonAlex = new LeonAlex(feline);
         assertTrue("Нью-Йоркский зоопарк".equals(leonAlex.getPlaceOfLiving()));
     }
 
     @Test
-    public void getKittens() {
+    public void getKittens() throws Exception {
         LeonAlex leonAlex = new LeonAlex(feline);
         assertEquals(0, leonAlex.getKittens());
     }

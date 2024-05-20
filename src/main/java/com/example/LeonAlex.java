@@ -3,7 +3,7 @@ package com.example;
 import java.util.List;
 
 public class LeonAlex extends Lion {
-    public LeonAlex(Feline feline) throws IndexOutOfBoundsException {
+    public LeonAlex(Feline feline) throws Exception {
         super(feline, "Самец");
     }
 
