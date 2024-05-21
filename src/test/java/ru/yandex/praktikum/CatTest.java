@@ -32,7 +32,7 @@ public class CatTest {
         Cat cat = new Cat(feline);
         List<String> foodList = List.of("Животные", "Птицы", "Рыба");
         String textError = "Feline питается " + foodList.toString();
-        when(cat.getFood()).thenReturn(foodList);
+        when(feline.eatMeat()).thenReturn(foodList);
         List<String> eatList = cat.getFood();
         Assert.assertEquals(textError, foodList, eatList);
     }
